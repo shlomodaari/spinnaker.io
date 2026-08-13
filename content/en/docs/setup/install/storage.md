@@ -14,7 +14,16 @@ lose, we recommend you use a hosted storage solution you are confident in.
 
 ## Supported databases
 Spinnaker recommends MySQL/MariaDB or Postgresql.  It's recommended for most users to start
-with MariaDB/MySQL.  
+with MariaDB/MySQL.
+
+{{% alert title="Front50 non-SQL storage deprecated" color="warning" %}}
+Front50 metadata storage backends other than SQL (S3, GCS, Redis, Azure, Oracle,
+Swift) are **deprecated** and scheduled for removal after Spinnaker **2027.0.0**.
+Migrate Front50 to SQL now — see
+[Set up Front50 to use SQL](/docs/setup/productionize/persistence/front50-sql/).
+S3 plugin-binary storage and Orca's artifact store are not covered by this
+deprecation.
+{{% /alert %}}
 
 Services ship with `mysql-connector-java` by default. You can provide additional JDBC 
 connectors on the classpath if desired.  MySQL/MariaDB is reported to work all the way

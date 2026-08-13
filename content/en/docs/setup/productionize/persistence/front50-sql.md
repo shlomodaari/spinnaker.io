@@ -4,7 +4,17 @@ title:  "Set up Front50 to use SQL"
 description: You can configure Front50 to use a MySQL compatible database for all of its persistence use cases. This provides more resiliency for your deployment.
 ---
 
+{{% alert title="Deprecation notice" color="warning" %}}
+Non-SQL Front50 metadata storage backends (**S3**, **GCS**, **Redis**, **Azure**,
+**Oracle**, and **Swift**) are **deprecated** and scheduled for removal after
+Spinnaker **2027.0.0**. SQL is the recommended persistence store today and will
+be required after that release. Enabling a deprecated backend logs a startup
+warning.
 
+This deprecation covers Front50 *metadata* storage only. S3 plugin-binary
+storage (`spinnaker.s3.plugin-storage`) and Orca's artifact store continue to
+support S3.
+{{% /alert %}}
 
 You can configure Front50 to use a MySQL compatible database in place of any cloud provider-specific storage service (S3, GCS, etc.).
 
